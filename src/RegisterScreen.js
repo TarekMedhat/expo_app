@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 import { Button, Input, SignFooter } from './common';
 
 export default class RegisterScreen extends React.Component {
@@ -19,6 +19,16 @@ export default class RegisterScreen extends React.Component {
     if (this.state.username&&this.state.password&&this.state.mobile) {
       this.props.navigation.goBack();
     }
+    else {
+      Alert.alert(
+  'Register Error',
+  'The username or password or mobile fields are empty.',
+  [
+    
+    {text: 'OK', onPress: () => console.log('OK Pressed')},
+  ],
+  { cancelable: false }
+)}
   }
 
 

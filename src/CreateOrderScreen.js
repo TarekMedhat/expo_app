@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { SectionList, StyleSheet, Text, View, } from 'react-native';
+import { Alert, SectionList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { sectionListData } from './sectionListData';
-import { ListItem } from './common';
-import { Button } from './common';
+import { Button, ListItem } from './common';
+
 
 class SectionListItem extends Component {
+    
     render() {
 
         return (
@@ -58,14 +59,35 @@ class SectionHeader extends Component {
         );
     }
 }
-export default class BasicSectionList extends Component {
+export default class CreateOrderScreen extends Component {
+
+        static navigationOptions = ({ navigation }) => {
+      
+      const logoutBtnStyle = { paddingRight: 12,};
+
+  const headerRight = (
+        <TouchableOpacity style={logoutBtnStyle} 
+          onPress={() => navigation.navigate('Auth')}>
+          <Text>Logout</Text>
+        </TouchableOpacity>
+      );
+      return {  headerRight };
+    };
+     
 constructor(props) {
     super(props);
     this.state = {
+        checked:'hi'
       }
   }
     _onCreateOrderPressed() {
-    //Create Order
+           Alert.alert('Ordered created successfully!',
+          'Lets assume that the order was created..!',
+          [
+            {text: 'OK', onPress: () => console.log('OK Pressed')},
+          ],
+          { cancelable: false }
+        )
   }
 
     render() {

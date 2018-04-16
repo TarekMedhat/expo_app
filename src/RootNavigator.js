@@ -4,6 +4,13 @@ import RegisterScreen from '../src/RegisterScreen'
 import CreateOrderScreen from '../src/CreateOrderScreen'
 import { StackNavigator, SwitchNavigator } from 'react-navigation';
 
+const SplashStack = StackNavigator({ 
+ Splash: {
+    screen: Splash,
+    navigationOptions: {
+      header: false
+    }
+  }});
 const AppStack = StackNavigator({ 
   CreateOrder: {
     screen: CreateOrderScreen,
@@ -12,12 +19,6 @@ const AppStack = StackNavigator({
     }
   }});
 const AuthStack = StackNavigator({ 
-  Splash: {
-    screen: Splash,
-    navigationOptions: {
-      header: false
-    }
-  },
 	Login: {
     screen: LoginScreen,
     navigationOptions: {
@@ -33,12 +34,12 @@ const AuthStack = StackNavigator({
 
 const RootNavigator =  SwitchNavigator(
   {
-    AuthLoading: LoginScreen,
+    Splash: SplashStack,
     App: AppStack,
     Auth: AuthStack,
   },
   {
-    initialRouteName: 'Auth',
+    initialRouteName: 'Splash',
   }
 );
 

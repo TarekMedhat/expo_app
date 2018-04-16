@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 import { Button, Input, SignFooter } from './common';
 import CheckboxGroup from 'react-native-checkbox-group'
 
@@ -15,8 +15,16 @@ export default class LoginScreen extends React.Component {
   _onLoginPressed() {
     if (this.state.username&&this.state.password) {
         this.props.navigation.navigate('App');
-    };
-
+    }
+    else {Alert.alert(
+  'Login Error',
+  'The username or password fields are empty.',
+  [
+    
+    {text: 'OK', onPress: () => console.log('OK Pressed')},
+  ],
+  { cancelable: false }
+)}
   }
   _onSignupPressed() {
     this.props.navigation.navigate('Register');

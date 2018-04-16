@@ -23,20 +23,13 @@ const styles = StyleSheet.create({
 class Splash extends Component {
 
   componentDidMount() {
-    AsyncStorage.getItem('app_token')
-      .then(token => {
-          if (token) {
-            this._navigate('Home');
-          }else {
-            this._navigate('Login');
-          }
-      });
+  this._navigate();   
   }
 
     //Added this dummy method to cause a delay just to see the splash
-  _navigate(screen) {
+  _navigate() {
     setTimeout(() => {
-      this.props.navigation.navigate(screen);
+      this.props.navigation.navigate('Auth');
     }, 2500 );
 
   }
