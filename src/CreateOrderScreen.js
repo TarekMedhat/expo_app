@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, SectionList, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Alert, SectionList, StyleSheet, Text, View, TouchableOpacity, Platform } from 'react-native';
 import { sectionListData } from './sectionListData';
 import { Button, ListItem } from './common';
 
