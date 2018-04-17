@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     flexDirection: 'row',
     marginVertical:25,
-     fontSize: 14,
     // justifyContent: 'center',
   },
  
