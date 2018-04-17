@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { CheckBox } from 'react-native-elements'
 import CheckboxGroup from 'react-native-checkbox-group'
 
 const styles = StyleSheet.create({
